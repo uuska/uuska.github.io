@@ -67,7 +67,27 @@
             font-size: 2rem;
             margin-bottom: 1rem;
         }
+        #custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    background-image: url('images/cursor.png');
+    background-size: cover;
+    pointer-events: none;
+    z-index: 100000;
+  }
         </style>
+        <div id="custom-cursor"></div>
+
+        <script>
+          const cursor = document.getElementById('custom-cursor');
+          document.addEventListener('mousemove', e => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+          });
+        </script>
 </head>
 <body>
     <h1>About Me</h1>
@@ -102,8 +122,25 @@
                 </li>
             </ul>
         </section>
-
-
+        <section>
+            <h2>My favorite movies:</h2>
+            <ul>
+                <li style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <img src="images/comeandsee.png" alt="The Godfather poster" width="200" height="300" style="margin-bottom: 10px;">
+                    <h3>Come And See</h3>
+                    <div class="video-container" style="display: flex; justify-content: center;">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/zjIiApN6cfg" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </li>
+                <li style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <img src="images/thelighthouse.jpg" alt="Pulp Fiction poster" width="200" height="300" style="margin-bottom: 10px;">
+                    <h3>The Lighthouse</h3>
+                    <div class="video-container" style="display: flex; justify-content: center;">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Hyag7lR8CPA" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </li>
+            </ul>
+        </section>
         <section>
             <h2>Follow me on social media:</h2>
             <ul>
